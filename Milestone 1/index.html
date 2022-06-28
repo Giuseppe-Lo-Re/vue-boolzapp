@@ -159,10 +159,10 @@
                     </div>
 
                     <!-- Chat Room -->
-                    <div v-for='message in contacts[2].messages' class="chat-room">
+                    <div class="chat-room">
                         
                         <!-- Message -->
-                        <div class="message" :class="message.status === 'received' ? 'received' : 'sent'">
+                        <div v-for='message in contacts[2].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
 
                             <!-- Text Chat -->
                             <div class="text-chat ">
@@ -174,7 +174,6 @@
                                 {{message.date}}
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Message Input  -->

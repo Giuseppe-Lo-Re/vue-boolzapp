@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0a9687;
+    background: rgb(0,150,136);   background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 20%, rgba(217,217,217,1) 20%);
 }
 
 /* COMMON */
@@ -104,6 +104,7 @@ img {
 /* MAIN */
 main {
     display: flex;
+    width: 100%;
 }
 
 /* Left Nav */
@@ -192,7 +193,7 @@ main {
     padding: 10px 50px;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 50px);
+    height: calc(100% - 120px);
     overflow-y: auto;
 }
 
