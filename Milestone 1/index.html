@@ -123,12 +123,12 @@
                         <div class="user-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" src="img/avatar_1.jpg" alt="avatar_1">
+                            <img class="img-profile" :src="'img/avatar' + contacts[2].avatar+ '.jpg'" alt="avatar_1">
     
                             <div>
                                 <!-- Username -->
                                 <div class="username">
-                                    Nome utente
+                                    {{contacts[2].name}}
                                 </div>
 
                                 <!-- Last login -->
