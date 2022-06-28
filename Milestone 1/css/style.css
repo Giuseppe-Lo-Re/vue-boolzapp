@@ -55,6 +55,30 @@ img {
     color: #b1b1b1;
 }
 
+/* Messages */
+.message {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.text-chat {
+    font-size: 13px;
+}
+
+.time-chat {
+    font-size: 8px;
+    text-align: right;
+    padding-top: 3px;
+    color: #b6b9bb;
+}
+
+.message.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
 /* END COMMON */
 
 /* APP-WRAPPER */
@@ -96,7 +120,7 @@ main {
     padding: 10px;   
 }
 
-.notice-msg p {
+.notice-msg div {
     font-weight: 400;
 }
 
@@ -148,7 +172,10 @@ main {
 /* Chat Room */
 .chat-room {
     background-image: url(../img/mine.jpg);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
 }
-/* END Chat Body */
+/* END Chat Room */
 
 /* END MAIN */
