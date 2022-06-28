@@ -23,105 +23,139 @@
     <title>Vue Boolzapp</title>
 </head>
 <body>
+    <div id="root">
+        <div class="app-wrapper">
+
+            <!-- MAIN -->
+            <main>
     
-    <div class="app-wrapper">
-
-        <!-- MAIN -->
-        <main>
-
-            <!-- Left Nav -->
-            <div class="left-nav">
-
-                <!-- header Nav-->
-                <div class="header-content">
-
-                    <div class="user-container">
-
-                        <!-- Img Profile -->
-                        <img class="img-profile" src="img/avatar_1.jpg" alt="avatar_1">
-
-                        <!-- Username -->
-                        <div class="username">
-                            Nome utente
+                <!-- Left Nav -->
+                <div class="left-nav">
+    
+                    <!-- header Nav-->
+                    <div class="header-content">
+    
+                        <div class="user-container">
+    
+                            <!-- Img Profile -->
+                            <img class="img-profile" src="img/avatar_io.jpg" alt="avatar_io">
+    
+                            <!-- Username -->
+                            <div class="username">
+                                Nome utente
+                            </div>
+                        </div>
+    
+                        <!-- Icons container -->
+                        <div class="icons-container">
+    
+                            <!-- Circle-notch Icon -->
+                            <span>
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </span>
+    
+                            <!-- Message Icon -->
+                            <span>
+                                <i class="fa-solid fa-message"></i>
+                            </span>
+    
+                            <!-- Ellipsis-vertical Icon -->
+                            <span>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </span>
                         </div>
                     </div>
-
-                    <!-- Icons container -->
-                    <div class="icons-container">
-
-                        <!-- Circle-notch Icon -->
-                        <span>
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </span>
-
-                        <!-- Message Icon -->
-                        <span>
-                            <i class="fa-solid fa-message"></i>
-                        </span>
-
-                        <!-- Ellipsis-vertical Icon -->
-                        <span>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Notices Section -->
-                <div class="notices-section">
-
-                    <!-- Bell-slash Icon -->
-                    <div class="bell">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-
-                    <!-- Notice Message -->
-                    <div class="notice-msg">
-                        <p>
-                            Ricevi notifiche di nuovi messagi
-                        </p>
-
-                        <a href="#">
-                            Attiva notifiche desktop
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Search Input  -->
-                <div class="search-input">
-
-                    <!-- Lens Icon -->
-                    <span>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-
-                    <!-- Input -->
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-
-                <!-- Chat Container Template -->
-                <ul>
-                    <li v-for='(contact,index) in contacts'  class="chat-container">
-
-                        <!-- Img Profile -->
-                        <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
     
-                        <!-- Username -->
-                        <div class="username">
-                            {{contact.name}}
+                    <!-- Notices Section -->
+                    <div class="notices-section">
+    
+                        <!-- Bell-slash Icon -->
+                        <div class="bell">
+                            <i class="fa-solid fa-bell-slash"></i>
                         </div>
-                    </li>
-                </ul> 
-            </div>
-            <!-- END Left Nav -->
-
-            <!-- Chat Content -->
-            <div class="chat-content">
-                
-            </div>
-            <!-- END Chat Content -->
-        </main>
-        <!-- END MAIN -->
+    
+                        <!-- Notice Message -->
+                        <div class="notice-msg">
+                            <p>
+                                Ricevi notifiche di nuovi messagi
+                            </p>
+    
+                            <a href="#">
+                                Attiva notifiche desktop
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Search Input  -->
+                    <div class="search-input">
+    
+                        <!-- Lens Icon -->
+                        <span>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+    
+                        <!-- Input -->
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+    
+                    <!-- Chat Container Template -->
+                    <ul>
+                        <li v-for='(contact,index) in contacts'  class="chat-container">
+    
+                            <!-- Img Profile -->
+                            <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+        
+                            <!-- Username -->
+                            <div class="username">
+                                {{contact.name}}
+                            </div>
+                        </li>
+                    </ul> 
+                </div>
+                <!-- END Left Nav -->
+    
+                <!-- Chat Content -->
+                <div class="chat-body">
+                    
+                    <div class="header-content">
+    
+                        <div class="user-container">
+    
+                            <!-- Img Profile -->
+                            <img class="img-profile" src="img/avatar_1.jpg" alt="avatar_1">
+    
+                            <!-- Username -->
+                            <div class="username">
+                                Nome utente
+                            </div>
+                        </div>
+    
+                        <!-- Icons container -->
+                        <div class="icons-container">
+    
+                            <!-- Circle-notch Icon -->
+                            <span>
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </span>
+    
+                            <!-- Message Icon -->
+                            <span>
+                                <i class="fa-solid fa-message"></i>
+                            </span>
+    
+                            <!-- Ellipsis-vertical Icon -->
+                            <span>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Chat Content -->
+            </main>
+            <!-- END MAIN -->
+        </div>
     </div>
+    
 
     <!-- Javascript -->
     <script type="text/javascript" src="js/script.js"></script>

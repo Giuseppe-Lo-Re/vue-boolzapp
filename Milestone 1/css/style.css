@@ -64,6 +64,9 @@ img {
 /* END APP-WRAPPER */
 
 /* MAIN */
+main {
+    display: flex;
+}
 /* Left Nav */
 .left-nav {
     background-color: #ffffff;
@@ -126,8 +129,12 @@ img {
     border: 1px solid #eaeaea;
     border-left: none;
 }
-
-
 /* END Left Nav */
+
+/* Chat Body */
+.chat-body {
+    width: 60%;
+}
+/* END Chat Body */
 
 /* END MAIN */
