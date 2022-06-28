@@ -17,6 +17,7 @@ body {
     padding: 10px;
     background-color: #eaeaea;
 }
+
 img {
     width: 100%;
 }
@@ -79,6 +80,11 @@ img {
     background-color: #d5f9ba;
     align-self: flex-end;
 }
+
+.message.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+}
 /* END COMMON */
 
 /* APP-WRAPPER */
@@ -96,6 +102,7 @@ img {
 main {
     display: flex;
 }
+
 /* Left Nav */
 .left-nav {
     background-color: #ffffff;
@@ -106,6 +113,7 @@ main {
     background-color: #8ddafb ;
     display: flex;
     align-items: center;
+    height: 70px;
 }
 
 .bell {
@@ -129,30 +137,36 @@ main {
     font-size: 14px;
 }
 
-.search-input {
+.input {
     display: flex;
     align-items: center;
     padding: 5px;
     background-color: #fafafa;
+    height: 50px;
 }
 
-.search-input span {
+.left-nav .input span {
     background-color: #ffffff;
 }
 
-.search-input i {
+.input i {
     color: #b6b9bb;
     padding: 10px 30px;
     border: 1px solid #eaeaea;
     border-right: none;
 }
 
-.search-input input {
+.input input {
     width:100%;
     border: none;
     padding: 10px;
     border: 1px solid #eaeaea;
     border-left: none;
+}
+
+.chats {
+    height: calc(100% - 190px);
+    overflow-y: auto;
 }
 /* END Left Nav */
 
@@ -172,9 +186,24 @@ main {
 /* Chat Room */
 .chat-room {
     background-image: url(../img/mine.jpg);
-    padding: 50px;
+    padding: 10px 50px;
     display: flex;
     flex-direction: column;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+.chat-body .input {
+    background: #f3eeea;
+}
+
+.chat-body .input i {
+    padding: 10px 30px;
+    color: #6a7376;
+}
+
+.chat-body input {
+    border-radius: 10px;
 }
 /* END Chat Room */
 

@@ -77,7 +77,7 @@
                         <!-- Notice Message -->
                         <div class="notice-msg">
                             <div>
-                                Ricevi notifiche di nuovi messagi
+                                Ricevi notifiche di nuovi messaggi
                             </div>
     
                             <a href="#">
@@ -87,7 +87,7 @@
                     </div>
     
                     <!-- Search Input  -->
-                    <div class="search-input">
+                    <div class="input">
     
                         <!-- Lens Icon -->
                         <span>
@@ -99,7 +99,7 @@
                     </div>
     
                     <!-- Chat Container Template -->
-                    <ul>
+                    <ul class="chats">
                         <li v-for='(contact,index) in contacts'  class="chat-container">
     
                             <!-- Img Profile -->
@@ -114,7 +114,7 @@
                 </div>
                 <!-- END Left Nav -->
     
-                <!-- Chat Content -->
+                <!-- Chat Body -->
                 <div class="chat-body">
                     
                     <!-- Header Content -->
@@ -159,57 +159,46 @@
                     </div>
 
                     <!-- Chat Room -->
-                    <div class="chat-room">
+                    <div v-for='message in contacts[2].messages' class="chat-room">
                         
                         <!-- Message -->
-                        <div class="message">
+                        <div class="message" :class="message.status === 'received' ? 'received' : 'sent'">
 
                             <!-- Text Chat -->
-                            <div class="text-chat">
-                                La Marianna va in campagna
+                            <div class="text-chat ">
+                                {{message.text}}
                             </div>
 
                             <!-- Time Chat -->
                             <div class="time-chat">
-                                28/03/2020 10:10:40
+                                {{message.date}}
                             </div>
                         </div>
 
-                         <!-- Message -->
-                         <div class="message sent">
+                    </div>
 
-                            <!-- Text Chat -->
-                            <div class="text-chat">
-                                Sicuro di non aver sbagliato chat?
-                            </div>
+                    <!-- Message Input  -->
+                    <div class="input">
+    
+                        <!-- Smile Icon -->
+                        <span>
+                            <i class="fa-regular fa-face-smile"></i>
+                        </span>
+    
+                        <!-- Input -->
+                        <input type="text" placeholder="Scrivi un messaggio">
 
-                            <!-- Time Chat -->
-                            <div class="time-chat">
-                                28/03/2020 10:20:10
-                            </div>
-                        </div>
-
-                         <!-- Message -->
-                         <div class="message">
-
-                            <!-- Text Chat -->
-                            <div class="text-chat">
-                                Ah scusa!
-                            </div>
-
-                            <!-- Time Chat -->
-                            <div class="time-chat">
-                                28/03/2020 16:15:22
-                            </div>
-                        </div>
+                        <!-- Microphone Icon -->
+                        <span>
+                            <i class="fa-solid fa-microphone"></i>
+                        </span>
                     </div>
                 </div>
-                <!-- END Chat Content -->
+                <!-- END Chat Body -->
             </main>
             <!-- END MAIN -->
         </div>
     </div>
-    
 
     <!-- Javascript -->
     <script type="text/javascript" src="js/script.js"></script>
