@@ -10,6 +10,7 @@ var app = new Vue(
             currentActiveElement: 0,
             newMessage: '',
             userFilterText: '',
+            currentSelectElement: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -159,6 +160,22 @@ var app = new Vue(
                         element.visible = false;
                     } 
                 });
+            },
+
+            // Taglia il testo del messaggio nel chat container:
+            sliceMessage(text){
+                let newText = text;
+                if(text.length > 10){
+                    newText = text.slice(0,30);
+                    newText += "..."
+                }
+                return newText
+            },
+
+            // Cancella il messaggio selezionato:
+            deleteMessage(index) {
+                this.currentSelectElement = null;
+                this.contacts[this.currentActiveElement].messages.splice(index, 1);
             }
         }
     }

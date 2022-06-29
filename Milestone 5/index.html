@@ -104,12 +104,29 @@
                     <ul class="chats">
                         <li v-if="contact.visible" v-for='(contact,index) in contacts'  @click="setActiveElement(index)" class="chat-container" :class="index === currentActiveElement ? 'active' : '' ">
     
-                            <!-- Img Profile -->
-                            <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-        
-                            <!-- Username -->
-                            <div class="username">
-                                {{contact.name}}
+                            <div class="user-container">
+                                <!-- Img Profile -->
+                                <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+            
+                                <div>
+
+                                    <div>
+                                        <!-- Username -->
+                                        <div class="username">
+                                            {{contact.name}}
+                                        </div>
+
+                                        <!-- Last login -->
+                                        <div class="last-message-time">
+                                            {{contact.messages[contact.messages.length - 1].date}}
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Last message -->
+                                    <div class="last-message">
+                                        {{sliceMessage(contact.messages[contact.messages.length - 1].text)}}
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul> 
@@ -134,7 +151,7 @@
 
                                 <!-- Last login -->
                                 <div class="last-login">
-                                    ultimo accesso oggi alle
+                                    ultimo accesso oggi alle 
                                 </div>
                             </div>
                         </div>
@@ -163,14 +180,14 @@
                     <div class="chat-room">
                         
                         <!-- Message -->
-                        <div v-for='message, in contacts[currentActiveElement].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
+                        <div v-for='(message,index) in contacts[currentActiveElement].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
 
                             <!-- Text Chat -->
                             <div class="text-chat">
                                 {{message.text}} 
 
                                 <!-- Chevron down -->
-                                <div v-on click= "message.isVisible = !message.isVisible" class="chevron-down">
+                                <div @click= "message.isVisible = !message.isVisible" class="chevron-down">
                                     <i class="fa-solid fa-chevron-down"></i>
                                 </div>
                             </div>
@@ -181,12 +198,12 @@
                             </div>
 
                             <!-- Menu -->
-                            <div class="menu" v-for="!message.isVisible">
+                            <div class="menu" v-if="!message.isVisible">
                                 <div>
                                     Message info
                                 </div>
 
-                                <div>
+                                <div @click="deleteMessage(index)">
                                     Delete message
                                 </div>
                             </div>
