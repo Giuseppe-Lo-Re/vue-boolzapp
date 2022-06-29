@@ -187,6 +187,11 @@ main {
     display: flex;
     align-items: center;
 }
+
+.chat-body .header-content {
+    border-left: 1px solid lightgray;
+}
+
 .last-login {
     color: #b1b1b1;
     font-size: 14px;
