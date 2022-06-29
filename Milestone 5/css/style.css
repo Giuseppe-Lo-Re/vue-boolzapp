@@ -81,6 +81,8 @@ body {
 
 .text-chat {
     font-size: 13px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .time-chat {
@@ -99,6 +101,34 @@ body {
     background-color: #ffffff;
     align-self: flex-start;
 }
+
+.chevron-down {
+    color: #6a7376;
+    display: none; 
+}
+
+.menu {
+    font-size: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 120px;
+    padding: 10px 5px 10px 15px;
+    position: relative;
+    top: -14px;
+    left: 137px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu div {
+    text-align: left ;
+    padding: 5px;
+}
+
+.message:hover .chevron-down {
+    display: inline-block;  
+}
+
+
 /* END COMMON */
 
 .app-wrapper {

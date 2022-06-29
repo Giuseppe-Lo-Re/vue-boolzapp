@@ -163,16 +163,32 @@
                     <div class="chat-room">
                         
                         <!-- Message -->
-                        <div v-for='message in contacts[currentActiveElement].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
+                        <div v-for='message, in contacts[currentActiveElement].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
 
                             <!-- Text Chat -->
-                            <div class="text-chat ">
-                                {{message.text}}
+                            <div class="text-chat">
+                                {{message.text}} 
+
+                                <!-- Chevron down -->
+                                <div v-on click= "message.isVisible = !message.isVisible" class="chevron-down">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
                             </div>
 
                             <!-- Time Chat -->
                             <div class="time-chat">
                                 {{message.date}}
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="menu" v-for="!message.isVisible">
+                                <div>
+                                    Message info
+                                </div>
+
+                                <div>
+                                    Delete message
+                                </div>
                             </div>
                         </div>
                     </div>
