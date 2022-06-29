@@ -9,7 +9,7 @@ var app = new Vue(
         data: {
             currentActiveElement: 0,
             newMessage: '',
-            userFiltertext: '',
+            userFilterText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -132,15 +132,18 @@ var app = new Vue(
             },
             // Ricerca utenti: filtra i contatti attraverso l'input dell'utente:
             filterElementsByText() {
+
                 // trasforma l'input dell'utente in minuscolo:
-                const userInputLower = this.userFiltertext.toLowerCase();
+                const userInputLower = this.userFilterText.toLowerCase();
                 this.contacts.forEach((element) => {
+
                     // trasforma gli elementi in minuscolo:
                     const elementTextLower = element.name.toLowerCase();
+
                     if(elementTextLower.includes(userInputLower)) {
-                        element.visibile = true;
+                        element.visible = true;
                     } else {
-                        element.visibile = false;
+                        element.visible = false;
                     } 
                 });
             }

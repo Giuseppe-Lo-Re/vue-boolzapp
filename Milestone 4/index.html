@@ -97,12 +97,12 @@
                         </span>
     
                         <!-- Input -->
-                        <input v-model="userFilterText" @keyu.enter="filterElementsByText()" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="userFilterText" @keyup="filterElementsByText()" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
     
                     <!-- Chat Container Template -->
                     <ul class="chats">
-                        <li v-for='(contact,index) in contacts'  @click="setActiveElement(index)" class="chat-container" :class="index === currentActiveElement ? 'active' : '' ">
+                        <li v-if="contact.visible" v-for='(contact,index) in contacts'  @click="setActiveElement(index)" class="chat-container" :class="index === currentActiveElement ? 'active' : '' ">
     
                             <!-- Img Profile -->
                             <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
