@@ -1,14 +1,15 @@
-// Milestone 2
-// Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, 
-// visualizzare tutti i messaggi relativi al contatto attivo all’interno 
-// del pannello della conversazione
-// Click sul contatto mostra la conversazione del contatto cliccato
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa 
+// e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, 
+// l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
 var app = new Vue(
     {
         el: '#root',
         data: {
             currentActiveElement: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -96,9 +97,39 @@ var app = new Vue(
             ]            
         },
         methods: {
+
+            // Setta l'indice dell'elemento attivo:
             setActiveElement(index) {
                 this.currentActiveElement = index;
             },
+
+            // Aggiunge un nuovo messaggio all'array contacts:
+            addNewMessage() {
+                if(this.newMessage.length > 0) {
+                    this.contacts[this.currentActiveElement].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                            text: this.newMessage,
+                            status: 'sent'
+                        }
+                    );
+                    this.newMessage = '';
+
+                    // Richiama la funzione  dopo 1 secondo:
+                    setTimeout(this.returnNewMessage, 1000);
+                }
+            },
+
+            // Aggiunge un messaggio di risposta:
+            returnNewMessage() {
+                this.contacts[this.currentActiveElement].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'ok',
+                        status: 'received'
+                    }
+                );
+            }
         }
     }
 );
