@@ -41,7 +41,7 @@ body {
 .chat-container {
     display: flex;
     align-items: center;
-    border-top: 1px solid #b6b9bb;
+    border-top: 1px solid lightgray;
 }
 
 .chat-container:first-child {
@@ -108,6 +108,7 @@ body {
 main {
     display: flex;
     width: 70%;
+    height: 100%;
     margin: 0 auto;
 }
 
