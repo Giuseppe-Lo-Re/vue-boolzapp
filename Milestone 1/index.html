@@ -33,11 +33,14 @@
     
                     <!-- Header Content-->
                     <div class="header-content">
-    
                         <div class="user-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" src="img/avatar_io.jpg" alt="avatar_io">
+                            <img 
+                                class="img-profile" 
+                                src="img/avatar_io.jpg" 
+                                alt="avatar_io"
+                            >
     
                             <!-- Username -->
                             <div class="username">
@@ -102,7 +105,11 @@
                         <li v-for='(contact,index) in contacts'  class="chat-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                            <img 
+                                class="img-profile" 
+                                :src="'./img/avatar' + contact.avatar + '.jpg'" 
+                                :alt="contact.name"
+                            >
         
                             <!-- Username -->
                             <div class="username">
@@ -121,7 +128,11 @@
                         <div class="user-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" :src="'img/avatar' + contacts[2].avatar + '.jpg'" alt="avatar_1">
+                            <img 
+                                class="img-profile" 
+                                :src="'img/avatar' + contacts[2].avatar + '.jpg'" 
+                                alt="avatar_1"
+                            >
     
                             <div>
                                 <!-- Username -->
@@ -160,7 +171,11 @@
                     <div class="chat-room">
                         
                         <!-- Message -->
-                        <div v-for='message in contacts[2].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
+                        <div 
+                            v-for='message in contacts[2].messages' 
+                            class="message" 
+                            :class="message.status === 'received' ? 'received' : 'sent'"
+                        >
 
                             <!-- Text Chat -->
                             <div class="text-chat ">
