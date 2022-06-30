@@ -36,10 +36,12 @@ body {
 
 .user-container {
     display: flex;
+    justify-content: space-between;
 }
-
-.chat-container {
+.user-info {
     display: flex;
+}
+.chat-container {
     border-top: 1px solid lightgray;
 }
 
@@ -52,21 +54,29 @@ body {
 }
 
 .username {
-    display: flex;
-    align-items: center;
+    padding-top: 10px;
     font-weight: 500;
 }
 
+/* .user-info {
+    display: flex;
+} */
+
 .last-login,
-.last-message {
+.last-message,
+.last-message-time {
     color: #b1b1b1;
-    font-size: 14px;
+    font-size: 11px;
+}
+
+.last-message {
+    padding-top: 3px;
 }
 
 .last-message-time {
-    text-align: right;
-    color: #b1b1b1;
-    font-size: 14px;
+    padding-top: 15px;
+    padding-right: 3px;
+    
 }
 
 .icons-container {
@@ -228,10 +238,6 @@ main {
 /* Chat Body */
 .chat-body {
     width: 65%;
-}
-.user-container {
-    display: flex;
-    align-items: center;
 }
 
 .chat-body .header-content {

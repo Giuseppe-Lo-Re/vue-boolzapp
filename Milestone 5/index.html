@@ -120,28 +120,29 @@
 
                             <div class="user-container">
                                 <!-- Img Profile -->
-                                <img 
+                                <div class="user-info">
+                                    <img 
                                     class="img-profile" 
                                     :src="'./img/avatar' + contact.avatar + '.jpg'" 
                                     :alt="contact.name"
-                                >
-                                <div>
+                                    >
+                                
                                     <div>
                                         <!-- Username -->
                                         <div class="username">
                                             {{contact.name}}
                                         </div>
 
-                                        <!-- Last login -->
-                                        <div class="last-message-time">
-                                            {{contact.messages[contact.messages.length - 1].date}}
+                                        <!-- Last message -->
+                                        <div class="last-message">
+                                            {{sliceMessage(contact.messages[contact.messages.length - 1].text)}}
                                         </div>
                                     </div>
-                                    
-                                    <!-- Last message -->
-                                    <div class="last-message">
-                                        {{sliceMessage(contact.messages[contact.messages.length - 1].text)}}
-                                    </div>
+                                </div>
+
+                                <!-- Last login -->
+                                <div class="last-message-time">
+                                    {{contact.messages[contact.messages.length - 1].date}}
                                 </div>
                             </div>
                         </li>

@@ -165,10 +165,10 @@ var app = new Vue(
             // Taglia il testo del messaggio nel chat container:
             sliceMessage(text){
                 let newText = text;
-                if(text.length > 10){
-                    newText = text.slice(0,30);
+                if(text.length > 13){
+                    newText = text.slice(0,20);
                     newText += "..."
-                }
+                } 
                 return newText
             },
 
