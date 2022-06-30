@@ -205,13 +205,15 @@
                             <div 
                                 v-for='(message,index) in contacts[currentActiveElement].messages' 
                                 class="message" 
-                                :class="message.status === 'received' ? 'received' : 'sent'"
-                            >
+                                :class="message.status === 'received' ? 'received' : 'sent'">
 
-                                <!-- Text Chat -->
-                                <div class="text-chat">
-                                    {{message.text}} 
-    
+                                <div class="flex-wrapper">
+                                    
+                                    <!-- Text Chat -->
+                                    <div class="text-chat">
+                                        {{message.text}} 
+                                    </div>
+
                                     <!-- Chevron down -->
                                     <div @click="showMenuInfo(index)" class="chevron-down">
                                         <i class="fa-solid fa-chevron-down"></i>
@@ -222,7 +224,7 @@
                                 <div class="time-chat">
                                     {{message.date}}
                                 </div>
-    
+
                                 <!-- Menu -->
                                 <div v-if="currentSelectElement === index" class="menu">
                                     <div>
