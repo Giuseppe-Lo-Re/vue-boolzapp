@@ -36,11 +36,14 @@
     
                     <!-- Header Content-->
                     <div class="header-content">
-    
                         <div class="user-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" src="img/avatar_io.jpg" alt="avatar_io">
+                            <img 
+                                class="img-profile" 
+                                src="img/avatar_io.jpg" 
+                                alt="avatar_io"
+                            >
     
                             <!-- Username -->
                             <div class="username">
@@ -102,10 +105,19 @@
     
                     <!-- Chat Container Template -->
                     <ul class="chats">
-                        <li v-for='(contact,index) in contacts'  @click="setActiveElement(index)" class="chat-container" :class="index === currentActiveElement ? 'active' : '' ">
+                        <li 
+                            v-for='(contact,index) in contacts' 
+                            @click="setActiveElement(index)" 
+                            class="chat-container" 
+                            :class="index === currentActiveElement ? 'active' : '' "
+                        >
     
                             <!-- Img Profile -->
-                            <img class="img-profile" :src="'./img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                            <img 
+                                class="img-profile" 
+                                :src="'./img/avatar' + contact.avatar + '.jpg'" 
+                                :alt="contact.name"
+                            >
         
                             <!-- Username -->
                             <div class="username">
@@ -124,7 +136,11 @@
                         <div class="user-container">
     
                             <!-- Img Profile -->
-                            <img class="img-profile" :src="'img/avatar' + contacts[currentActiveElement].avatar + '.jpg'" alt="avatar_1">
+                            <img 
+                                class="img-profile" 
+                                :src="'img/avatar' + contacts[currentActiveElement].avatar + '.jpg'" 
+                                alt="avatar_1"
+                            >
     
                             <div>
                                 <!-- Username -->
@@ -163,7 +179,11 @@
                     <div class="chat-room">
                         
                         <!-- Message -->
-                        <div v-for='message in contacts[currentActiveElement].messages' class="message" :class="message.status === 'received' ? 'received' : 'sent'">
+                        <div 
+                            v-for='message in contacts[currentActiveElement].messages' 
+                            class="message" 
+                            :class="message.status === 'received' ? 'received' : 'sent'"
+                        >
 
                             <!-- Text Chat -->
                             <div class="text-chat ">
@@ -186,7 +206,12 @@
                         </span>
     
                         <!-- Input -->
-                        <input v-model="newMessage" @keyup.enter="addNewMessage()" type="text" placeholder="Scrivi un messaggio">
+                        <input 
+                            v-model="newMessage" 
+                            @keyup.enter="addNewMessage()" 
+                            type="text" 
+                            placeholder="Scrivi un messaggio"
+                        >
 
                         <!-- Microphone Icon -->
                         <span>
