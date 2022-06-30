@@ -30,12 +30,25 @@ body {
     margin-right: 10px;
 }
 
+.chat-container .img-profile {
+    width: 60px;
+}
+
+.icons-container {
+    color: #b1b1b1;
+    font-size: 20px;
+}
+
 .icons-container span {
     padding-left: 10px;
 }
-
 .user-container {
     display: flex;
+    align-items: center;
+}
+
+.header-content .user-container {
+    justify-content: center;
 }
 
 .chat-container {
@@ -55,11 +68,7 @@ body {
 .username {
     display: flex;
     align-items: center;
-    font-weight: 500;
-}
-
-.icons-container {
-    color: #b1b1b1;
+    font-weight: 400;
 }
 
 /* Messages */
@@ -67,12 +76,12 @@ body {
     width: 45%;
     background-color: #ffffff;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
 }
 
 .text-chat {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .time-chat {
@@ -180,10 +189,6 @@ main {
 .chat-body {
     width: 65%;
 }
-.user-container {
-    display: flex;
-    align-items: center;
-}
 
 .chat-body .header-content {
     border-left: 1px solid lightgray;
@@ -197,7 +202,7 @@ main {
 /* Chat Room */
 .chat-room {
     background-image: url(../img/mine.jpg);
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     height: calc(100% - 120px);

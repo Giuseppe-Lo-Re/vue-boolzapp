@@ -30,6 +30,15 @@ body {
     margin-right: 10px;
 }
 
+.chat-container .img-profile {
+    width: 60px;
+}
+
+.icons-container {
+    color: #b1b1b1;
+    font-size: 20px;
+}
+
 .icons-container span {
     padding-left: 10px;
 }
@@ -38,9 +47,15 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.header-content .user-container {
+    justify-content: center;
+}
+
 .user-info {
     display: flex;
 }
+
 .chat-container {
     border-top: 1px solid lightgray;
 }
@@ -55,12 +70,8 @@ body {
 
 .username {
     padding-top: 10px;
-    font-weight: 500;
+    font-weight: 400;
 }
-
-/* .user-info {
-    display: flex;
-} */
 
 .last-login,
 .last-message,
@@ -75,12 +86,8 @@ body {
 
 .last-message-time {
     padding-top: 15px;
-    padding-right: 3px;
+    padding-right: 10px;
     
-}
-
-.icons-container {
-    color: #b1b1b1;
 }
 
 .active {
@@ -92,13 +99,13 @@ body {
     width: 45%;
     background-color: #ffffff;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     position: relative;
 }
 
 .text-chat {
-    font-size: 13px;
+    font-size: 12px;
     display: flex;
     justify-content: space-between;
 }
@@ -148,8 +155,6 @@ body {
 .message:hover .chevron-down {
     display: inline-block;  
 }
-
-
 /* END COMMON */
 
 .app-wrapper {
@@ -248,7 +253,7 @@ main {
 /* Chat Room */
 .chat-room {
     background-image: url(../img/mine.jpg);
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     height: calc(100% - 120px);
@@ -268,5 +273,4 @@ main {
     border-radius: 10px;
 }
 /* END Chat Room */
-
 /* END MAIN */
