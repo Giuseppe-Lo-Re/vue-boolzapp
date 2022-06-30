@@ -113,6 +113,8 @@ var app = new Vue(
             // Setta l'indice dell'elemento attivo:
             setActiveElement(index) {
                 this.currentActiveElement = index;
+                this.currentSelectElement = null;
+                console.log(this.currentActiveElement, this.currentSelectElement)
             },
 
             // Aggiunge un nuovo messaggio all'array contacts:
@@ -176,6 +178,15 @@ var app = new Vue(
             deleteMessage(index) {
                 this.currentSelectElement = null;
                 this.contacts[this.currentActiveElement].messages.splice(index, 1);
+            },
+
+            // 
+            showMenuInfo(index) {
+                if(this.currentSelectElement !== index) {
+                    this.currentSelectElement = index;               
+                } else {
+                    this.currentSelectElement = null;
+                }
             }
         }
     }

@@ -134,14 +134,14 @@
                                         </div>
 
                                         <!-- Last message -->
-                                        <div class="last-message">
+                                        <div v-if="contact.messages.length > 0" class="last-message">
                                             {{sliceMessage(contact.messages[contact.messages.length - 1].text)}}
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Last login -->
-                                <div class="last-message-time">
+                                <div v-if="contact.messages.length > 0" class="last-message-time">
                                     {{contact.messages[contact.messages.length - 1].date}}
                                 </div>
                             </div>
@@ -167,12 +167,12 @@
                             <div>
                                 <!-- Username -->
                                 <div class="username">
-                                    {{contacts[currentActiveElement].name}}
+                                    {{ contacts[currentActiveElement].name }}
                                 </div>
 
                                 <!-- Last login -->
-                                <div class="last-login">
-                                    ultimo accesso oggi alle 
+                                <div v-if="contacts[currentActiveElement].messages.length > 0" class="last-login">
+                                    ultimo accesso oggi alle {{ contacts[currentActiveElement].messages[contacts[currentActiveElement].messages.length - 1].date }}
                                 </div>
                             </div>
                         </div>
@@ -200,36 +200,38 @@
                     <!-- Chat Room -->
                     <div class="chat-room">
                         
-                        <!-- Message -->
-                        <div 
-                            v-for='(message,index) in contacts[currentActiveElement].messages' 
-                            class="message" 
-                            :class="message.status === 'received' ? 'received' : 'sent'"
-                        >
+                        <div style="display: contents;" >
+                            <!-- Message -->
+                            <div 
+                                v-for='(message,index) in contacts[currentActiveElement].messages' 
+                                class="message" 
+                                :class="message.status === 'received' ? 'received' : 'sent'"
+                            >
 
-                            <!-- Text Chat -->
-                            <div class="text-chat">
-                                {{message.text}} 
-
-                                <!-- Chevron down -->
-                                <div @click= "message.isVisible = !message.isVisible" class="chevron-down">
-                                    <i class="fa-solid fa-chevron-down"></i>
+                                <!-- Text Chat -->
+                                <div class="text-chat">
+                                    {{message.text}} 
+    
+                                    <!-- Chevron down -->
+                                    <div @click="showMenuInfo(index)" class="chevron-down">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Time Chat -->
-                            <div class="time-chat">
-                                {{message.date}}
-                            </div>
-
-                            <!-- Menu -->
-                            <div class="menu" v-if="!message.isVisible">
-                                <div>
-                                    Message info
+    
+                                <!-- Time Chat -->
+                                <div class="time-chat">
+                                    {{message.date}}
                                 </div>
-
-                                <div @click="deleteMessage(index)">
-                                    Delete message
+    
+                                <!-- Menu -->
+                                <div v-if="currentSelectElement === index" class="menu">
+                                    <div>
+                                        Message info
+                                    </div>
+    
+                                    <div @click="deleteMessage(index)">
+                                        Delete message
+                                    </div>
                                 </div>
                             </div>
                         </div>
