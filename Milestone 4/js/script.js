@@ -113,15 +113,17 @@ var app = new Vue(
                             status: 'sent'
                         }
                     );
+                    // Resetta vuoto l'input del messaggio:
                     this.newMessage = '';
 
-                    // Richiama la funzione  dopo 1 secondo:
+                    // Richiama la funzione che aggiunge un messaggio  dopo 1 secondo:
                     setTimeout(this.returnNewMessage, 1000);
                 }
             },
 
             // Aggiunge un messaggio di risposta:
             returnNewMessage() {
+                // Pusha nell'array contacts nella posizione dell'elemento attivo un nuovo oggetto contenente il messaggio:
                 this.contacts[this.currentActiveElement].messages.push(
                     {
                         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -130,6 +132,7 @@ var app = new Vue(
                     }
                 );
             },
+
             // Ricerca utenti: filtra i contatti attraverso l'input dell'utente:
             filterElementsByText() {
 
@@ -140,9 +143,12 @@ var app = new Vue(
                     // trasforma gli elementi in minuscolo:
                     const elementTextLower = element.name.toLowerCase();
 
+                    // Se l'input dell'utente in minuscolo è presente negli elementi dell'array in minuscolo:
                     if(elementTextLower.includes(userInputLower)) {
+                        // la key "visible" sarà uguale a true:
                         element.visible = true;
                     } else {
+                        // Altrimenti la key "visible" sarà uguale a falso:
                         element.visible = false;
                     } 
                 });

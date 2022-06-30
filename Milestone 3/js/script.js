@@ -105,7 +105,9 @@ var app = new Vue(
 
             // Aggiunge un nuovo messaggio all'array contacts:
             addNewMessage() {
+                // Se la lunghezza del nuovo messaggio è maggiore di zero:
                 if(this.newMessage.length > 0) {
+                    // Pusha nell'array contacts nella posizione dell'elemento attivo un nuovo oggetto contenente il messaggio:
                     this.contacts[this.currentActiveElement].messages.push(
                         {
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -113,15 +115,17 @@ var app = new Vue(
                             status: 'sent'
                         }
                     );
+                    // Resetta vuoto l'input del messaggio:
                     this.newMessage = '';
 
-                    // Richiama la funzione  dopo 1 secondo:
+                    // Richiama la funzione che aggiunge un messaggio  dopo 1 secondo:
                     setTimeout(this.returnNewMessage, 1000);
                 }
             },
 
             // Aggiunge un messaggio di risposta:
             returnNewMessage() {
+                // Pusha nell'array contacts un nuovo oggetto contenente il messaggio:
                 this.contacts[this.currentActiveElement].messages.push(
                     {
                         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),

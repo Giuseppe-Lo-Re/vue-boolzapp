@@ -96,6 +96,8 @@ var app = new Vue(
             ]            
         },
         methods: {
+
+            // Setta l'indice dell'elemento attivo:
             setActiveElement(index) {
                 this.currentActiveElement = index;
             },

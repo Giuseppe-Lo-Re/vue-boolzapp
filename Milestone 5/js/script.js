@@ -156,35 +156,48 @@ var app = new Vue(
                     // trasforma gli elementi in minuscolo:
                     const elementTextLower = element.name.toLowerCase();
 
+                    // Se l'input dell'utente in minuscolo è presente negli elementi dell'array in minuscolo:
                     if(elementTextLower.includes(userInputLower)) {
+                        // la key "visible" sarà uguale a true:
                         element.visible = true;
                     } else {
+                        // Altrimenti la key "visible" sarà uguale a falso:
                         element.visible = false;
                     } 
                 });
             },
 
-            // Taglia il testo del messaggio nel chat container:
+            // Taglia il testo del messaggio:
             sliceMessage(text){
+                // dichiaro una nuova variabile "newText" che sarà uguale alla key "text" presente nell'array:
                 let newText = text;
+                // Se la lunghezza della key "text" è maggiore di 13:
                 if(text.length > 13){
+                    // "newText" sarà uguale a "text" tagliato dopo 20 lettere:
                     newText = text.slice(0,20);
+                    // Concatena alla fine la stringa "..."
                     newText += "..."
                 } 
+                // Restituisce fuori "newText"
                 return newText
             },
 
             // Cancella il messaggio selezionato:
             deleteMessage(index) {
+                // Dichiaro la variabile uguale a "null"
                 this.currentSelectElement = null;
+                // Taglia il messaggio(posizionato secondo l'indice) nell'array contacts nella posizione dell'elemento attivo:
                 this.contacts[this.currentActiveElement].messages.splice(index, 1);
             },
 
-            // 
+            // Mostra il menù info dei messaggi:
             showMenuInfo(index) {
+                // Se l'elemento selezionato è diverso da quello dell'index:
                 if(this.currentSelectElement !== index) {
+                    // Allora l'elemento selezionato sarà uguale all'index:
                     this.currentSelectElement = index;               
                 } else {
+                    // Altrimenti l'elemento selezionato sarà uguale a "null":
                     this.currentSelectElement = null;
                 }
             }
