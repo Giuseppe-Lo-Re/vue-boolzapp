@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #eaeaea;
 }
 
@@ -98,16 +98,13 @@ body {
 .message {
     width: 45%;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 5px;
     border-radius: 10px;
-    position: relative;
 }
 
 .text-chat {
     font-size: 12px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .time-chat {
@@ -129,7 +126,7 @@ body {
 
 .chevron-down {
     color: #6a7376;
-    display: none; 
+    display: block; 
     cursor: pointer;
 }
 
@@ -267,6 +264,7 @@ main {
 .chat-body .input i {
     padding: 10px 30px;
     color: #6a7376;
+    font-size: 20px;
 }
 
 .chat-body input {
