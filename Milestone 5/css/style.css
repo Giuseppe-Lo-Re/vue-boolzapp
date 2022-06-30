@@ -73,10 +73,6 @@ body {
     color: #b1b1b1;
 }
 
-.left-nav li:hover {
-    background-color: lightgray;
-}
-
 .active {
     background-color: #e8ebeb;
 }
